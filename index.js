@@ -44,14 +44,14 @@ function getInputs() {
   yeastCount = totalYeastCells / 2;
   yeastViability = ((totalLivingCells / totalYeastCells) * 100).toFixed() + "%";
   results();
+  buttonChanger();
 }
 
 function results() {
   for (var i = 0; i <= userInputs.length - 1; i++) {
     document.getElementById(`q${i + 1}`).innerHTML = `<h4>${userInputs[i].living} Living / ${userInputs[i].dead} Dead </h4>`;
   }
-  document.getElementById("results").innerHTML = `<h3>Yeast Count: ${yeastCount}</h3> <h3>Yeast Viability: ${yeastViability}</h3>`;
-  buttonChanger();
+  document.getElementById("results").innerHTML = `<h2>Yeast Count: ${yeastCount}</h2> <h2>Yeast Viability: ${yeastViability}</h2>`;
 }
 
 function buttonChanger() {
