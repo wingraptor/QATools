@@ -22,6 +22,7 @@ let userInputs = [
   },
 ];
 
+// Results Variables
 let totalYeastCells = 0,
     yeastCount,
     totalDeadCells = 0,
@@ -47,11 +48,12 @@ function getInputs() {
 
 function results() {
   for (var i = 0; i <= userInputs.length - 1; i++) {
-    document.getElementById(`q${i + 1}`).innerHTML = `<h4>${userInputs[i].living} Living cells / ${userInputs[i].dead} Dead cells </h4>`;
+    document.getElementById(`q${i + 1}`).innerHTML = `<h4>${userInputs[i].living} Living / ${userInputs[i].dead} Dead </h4>`;
   }
   document.getElementById("results").innerHTML = `<h3>Yeast Count: ${yeastCount}</h3> <h3>Yeast Viability: ${yeastViability}</h3>`;
+  buttonChanger();
 }
 
-// let pageContent = document.querySelector(".pageContent");
-
-// pageContent.outerHTML = "<p>Hello</p>";
+function buttonChanger() {
+  document.querySelector(".btn").textContent = "Go Back";
+}
