@@ -2,12 +2,16 @@ body,html {
   height: 100%;
 }
 
+.pageTitle {
+  margin-bottom: 100px;
+}
+
 .pageContent {
   height: 50%;
 }
 
-.pageTitle {
-  margin-bottom: 100px;
+.sectorRow, nav, #results{
+  margin-bottom: 50px;
 }
 
 .sector{
