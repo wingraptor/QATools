@@ -128,10 +128,10 @@ function generateCodes(){
   //Clear the list of sample codes each time Generate Codes Button is Clicked
   numbersList.innerHTML = "";
   // Generate code for the hidden reference
-  document.querySelector(".hiddenRef").innerHTML = `<p> Hidden Ref: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}</p>`;
+  document.querySelector(".hiddenRef").innerHTML = `<h4> Hidden Ref: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}</h4>`;
   // Generate codes for each sample as given by the user in the number input field
   for (var i = 0; i <= sampleCount - 1; i++){
-    numbersList.innerHTML += `<p> Sample ${i +1}: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}</p>`;
+    numbersList.innerHTML += `<h4> Sample ${i +1}: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}</p>`;
   }
 }
 
