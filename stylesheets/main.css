@@ -6,11 +6,7 @@ body,html {
   margin-bottom: 100px;
 }
 
-.pageContent {
-  height: 50%;
-}
-
-.sectorRow, nav, #results{
+.sectorRow, nav, #results, .rowTitle{
   margin-bottom: 50px;
 }
 
@@ -18,4 +14,9 @@ body,html {
   border: black 2px solid;
   border-radius: 5%;
   padding: 5px;
+}
+
+.pairs {
+  display: inline-block;
+  margin-right: 25px;
 }
