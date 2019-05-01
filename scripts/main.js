@@ -122,7 +122,7 @@ Numbers for Direct Determinations
 
 let numbersList = document.querySelector(".numbersList");
 
-function generateCodes(){
+function generateCodes() {
   //Get number of samples as given by user in input form
   let sampleCount = Number(document.querySelector("#numberInput").value);
   //Clear the list of sample codes each time Generate Codes Button is Clicked
@@ -130,12 +130,35 @@ function generateCodes(){
   // Generate code for the hidden reference
   document.querySelector(".hiddenRef").innerHTML = `<h4> Hidden Ref: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}</h4>`;
   // Generate codes for each sample as given by the user in the number input field
-  for (var i = 0; i <= sampleCount - 1; i++){
-    numbersList.innerHTML += `<h4> Sample ${i +1}: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}</p>`;
+  for (var i = 0; i <= sampleCount - 1; i++) {
+    numbersList.innerHTML += `<h4> Sample ${i + 1}: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}</p>`;
   }
 }
 
 //Generate random number between the given max and min values
 function randomNum(maxNum, minNum) {
   return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+}
+
+/*********************************
+Alcohol Dilution Calcultor
+***********************************/
+
+function ABVFactorCalculator() {
+  let ABVFactor;
+  let alcVol;
+
+  // Get Form Fields
+  let currentABV = Number(document.querySelector("#currentABV").value);
+  let desiredABV = Number(document.querySelector("#desiredABV").value);
+  let desiredVol = Number(document.querySelector("#desiredVol").value);
+
+  ABVFactor = currentABV / desiredABV;
+
+  alcVol = (desiredVol / ABVFactor).toFixed(2);
+
+  waterVol = (desiredVol - alcVol).toFixed(2);
+
+  document.querySelector("#alcVol").textContent = `${alcVol} ml`;
+  document.querySelector("#waterVol").textContent = `${waterVol} ml`;
 }
