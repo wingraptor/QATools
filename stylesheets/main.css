@@ -1,5 +1,10 @@
 body,html {
   height: 100%;
+  font-family: 'Taviraj', serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+font-family: 'Work Sans', sans-serif;
 }
 
 .pageTitle {
@@ -19,4 +24,12 @@ body,html {
 .pairs {
   display: inline-block;
   margin-right: 25px;
+}
+
+.results {
+  font-size: 1.70em;
+  color: #28a745;
+}
+.results:nth-child(even){
+  color:#dc3545;
 }
