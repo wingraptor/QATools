@@ -53,7 +53,7 @@ function getInputs() {
 
 function results() {
   for (var i = 0; i <= userInputs.length - 1; i++) {
-    document.getElementById(`q${i + 1}`).innerHTML = `<h4> <span class="text-success">${userInputs[i].living} Living</span> / <span class="text-danger">${userInputs[i].dead} Dead <span></h4>`;
+    document.getElementById(`q${i + 1}`).innerHTML = `<h4> <span class="resultsText1">${userInputs[i].living} Living</span> / <span class="resultsText2">${userInputs[i].dead} Dead <span></h4>`;
   }
   document.getElementById("results").innerHTML = `<h2>Yeast Count: ${yeastCount}</h2> <h2>Yeast Viability: ${yeastViability}</h2>`;
 }
@@ -130,8 +130,13 @@ function generateCodes() {
   // Generate code for the hidden reference
   document.querySelector(".hiddenRef").innerHTML = `Hidden Ref: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}`;
   // Generate codes for each sample as given by the user in the number input field
-  for (var i = 0; i <= sampleCount - 1; i++) {
-    numbersList.innerHTML += `<p class="results"> Sample ${i + 1}: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}</p>`;
+  for (var i = 1; i <= sampleCount; i++) {
+    // Alternate CSS class of returned results
+    if(i % 2 !== 0){
+      numbersList.innerHTML += `<p class="resultsText1"> Sample ${i}: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}</p>`;
+    } else {
+      numbersList.innerHTML += `<p class="resultsText2"> Sample ${i}: ${randomNum(0, 9)}${randomNum(0, 9)}${randomNum(0, 9)}</p>`;
+    }
   }
 }
 

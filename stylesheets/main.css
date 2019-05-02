@@ -1,10 +1,19 @@
+:root {
+  --main-highlight-color: #ff6666;
+  --alt-highlight-color: #ffcc66;
+  --alt-highlight-color-2: #ff9966;
+  --body-font-family: 'Taviraj', serif;
+  --header-font-family: 'Work Sans', sans-serif;
+  --font-size-emphasis: 1.5em;
+}
+
 body,html {
   height: 100%;
-  font-family: 'Taviraj', serif;
+  font-family: var(--body-font-family);
 }
 
 h1,h2,h3,h4,h5,h6 {
-font-family: 'Work Sans', sans-serif;
+font-family: var(--header-font-family);
 }
 
 .pageTitle {
@@ -13,6 +22,11 @@ font-family: 'Work Sans', sans-serif;
 
 .sectorRow, nav, #results, .rowTitle, .card{
   margin-bottom: 50px;
+}
+
+.yeastCountGrid {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .sector{
@@ -24,12 +38,26 @@ font-family: 'Work Sans', sans-serif;
 .pairs {
   display: inline-block;
   margin-right: 25px;
+  color:var(--main-highlight-color);
+  font-size: var(--font-size-emphasis);
 }
 
-.results {
-  font-size: 1.70em;
-  color: #28a745;
+.resultsText1 {
+  font-size: var(--font-size-emphasis);
+  color: var(--alt-highlight-color-2);
 }
-.results:nth-child(even){
-  color:#dc3545;
+.resultsText2 {
+  font-size: var(--font-size-emphasis);
+  color: var(--main-highlight-color);
+}
+
+.btn{
+  background-color: var(--main-highlight-color);
+  border-color: var(--main-highlight-color);
+  color:var(--alt-highlight-color);
+}
+.btn:hover, .btn:active{
+  background-color: var(--alt-highlight-color);
+  border-color: var(--alt-highlight-color);
+  color: var(--main-highlight-color);
 }

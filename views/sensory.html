@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Taviraj|Work+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="../stylesheets/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Taviraj|Work+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/main.css">
   <title>Sensory Words and Codes</title>
 </head>
 
@@ -23,7 +23,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="./counts.html">Yeast Counts</a>
-        <a class="nav-item nav-link" href="./sensory.html">Sensory Words / Numbers</a>
+        <a class="nav-item nav-link" href="./sensory.html">Sensory Words / Codes</a>
         <a class="nav-item nav-link" href="./abvCalc.html">ABV Calculations</a>
       </div>
     </div>
@@ -35,27 +35,29 @@
 
   <div class="container h-100">
     <div class="row h-100 justify-content-center">
+      <!-- Sensory Word -->
       <div class="col-lg-6 col-sm-12">
         <h2 class="rowTitle">Triangle Assessment Words</h2>
         <div>
-          <p class="text-success results">Odd: <span class="words" id="odd"></span></p>
-          <p class="pairs results text-danger">Pair 1: <span class="words" id="pair1"></span></p>
-          <p class="pairs results text-danger">Pair 2: <span class="words" id="pair2"></span></p>
+          <p class="resultsText1">Odd: <span class="words" id="odd"></span></p>
+          <p class="pairs">Pair 1: <span class="words" id="pair1"></span></p>
+          <p class="pairs">Pair 2: <span class="words" id="pair2"></span></p>
         </div>
         <div>
           <button class="btn btn-primary btn-sm wordButtons" data-letter-count="3">3-Letter Words</button>
           <button class="btn btn-primary btn-sm wordButtons" data-letter-count="4">4-Letter Words</button>
         </div>
       </div>
+      <!-- Direct Determination Codes -->
       <div class="col-lg-6 col-sm-12">
         <h2 class="rowTitle">Codes for Direct Determinations</h2>
         <form onsubmit="generateCodes(); return false">
           <div class="form-group">
-            <label for="number" class="results text-body">Number of Samples: </label>
-            <input type="number" min="1" max="4" id="numberInput" name="sampleCount" class="form-control-sm">
+            <label for="number" class="">Number of Samples: </label>
+            <input type="number" min="1" max="4" id="numberInput" class="form-control-sm">
           </div>
           <div>
-            <p class="hiddenRef results text-body">Hidden Ref:</p>
+            <p class="hiddenRef resultsText2">Hidden Ref:</p>
             <div class="numbersList">
             </div>
           </div>
