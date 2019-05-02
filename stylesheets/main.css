@@ -27,6 +27,7 @@ font-family: var(--header-font-family);
 .yeastCountGrid {
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 30px;
 }
 
 .sector{

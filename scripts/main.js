@@ -53,7 +53,7 @@ function getInputs() {
 
 function results() {
   for (var i = 0; i <= userInputs.length - 1; i++) {
-    document.getElementById(`q${i + 1}`).innerHTML = `<h4> <span class="resultsText1">${userInputs[i].living} Living</span> / <span class="resultsText2">${userInputs[i].dead} Dead <span></h4>`;
+    document.getElementById(`q${i + 1}`).innerHTML = `<h4> <span>${userInputs[i].living} Living</span> / <span>${userInputs[i].dead} Dead <span></h4>`;
   }
   document.getElementById("results").innerHTML = `<h2>Yeast Count: ${yeastCount}</h2> <h2>Yeast Viability: ${yeastViability}</h2>`;
 }
