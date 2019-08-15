@@ -166,3 +166,44 @@ function ABVDilutionCalc() {
   document.querySelector("#alcVol").textContent = `${alcVol} ml`;
   document.querySelector("#waterVol").textContent = `${waterVol} ml`;
 }
+
+
+/*********************************
+Absolute Alcohol Volume Calculator
+***********************************/
+
+function absAlcVolCalc() {
+  let absAlcVol;
+
+  // Get Data from Form Fields
+  let componentVol = Number(document.querySelector("#componentVol").value);
+  let componentABV = Number(document.querySelector("#componentABV").value);
+
+  //Calculate absolute volume of ethanol
+  absAlcVol = (componentABV * (componentVol /100)).toFixed(2);
+
+// Add results to page
+  document.querySelector("#volAbsAlc").textContent = `${absAlcVol} ml`;
+}
+
+/*********************************
+ABV % Calculator
+**********************************/
+
+function abvCalc(){
+  let ABV;
+
+  // Get Data from form fields
+  let absAlcVol = Number(document.querySelector("#componentAlcVol").value);
+  let totalSolVol = Number(document.querySelector("#totalVol").value);
+
+  // Evaluate that values entered make sense
+  if (absAlcVol > totalSolVol){
+    alert("Absolute volume of alcohol cannot be more than total solution volume");
+  } else {
+    // Calculate ABV%
+    ABV = ((absAlcVol / totalSolVol) * 100).toFixed(2);
+    // Add results to page
+    document.querySelector("#ABV").textContent = `${ABV} %`;
+  }
+}

@@ -38,30 +38,79 @@
 
 
   <div class="container pageContent">
+    <!-- ABV Dilutions Section of Page -->
     <h2 class="text-center rowTitle">ABV Dilutions Calculator</h2>
-    <div class="row">
+    <div class="row abvRow">
+      <!-- Results Column -->
       <div class="col">
         <p class="font-weight-bold">Vol. of Sample (alcohol) Required:</p>
         <p class="resultsText1" id="alcVol">0.00 ml</p>
         <p class="font-weight-bold">Vol. of Water Required:</p>
         <p class="resultsText1" id="waterVol">0.00 ml</p>
       </div>
+      <!-- User Input Column -->
       <form onsubmit="ABVDilutionCalc(); return false" class="col">
         <div class="form-group">
-          <label for="currentABV">Current ABV</label>
-          <input type="number" class="form-control" id="currentABV" required step="0.1">
+          <label for="currentABV">Current ABV%</label>
+          <input type="number" class="form-control" id="currentABV" required step="0.01">
         </div>
         <div class="form-group">
-          <label for="desiredABV">Desired ABV</label>
+          <label for="desiredABV">Desired ABV%</label>
           <input type="number" class="form-control" min="1" id="desiredABV" required step="0.1"value="20">
         </div>
         <div class="form-group">
-          <label for="desiredVol">Desired Volume</label>
+          <label for="desiredVol">Desired Volume (ml)</label>
           <input type="number" class="form-control" id="desiredVol" required step="0.1" value="100">
         </div>
         <button type="submit" class="btn btn-primary btn-sm">Calculate</button>
       </form>
     </div>
+    <!-- Absolute Alcohol Section of Page -->
+    <h2 class="text-center rowTitle">Absolute Alcohol Vol. Calculator</h2>
+    <div class="row abvRow">
+      <!-- Results Column -->
+      <div class="col">
+        <div>
+          <p class="font-weight-bold">Volume of Absolute Alcohol:</p>
+          <span class="resultsText1" id="volAbsAlc">0.00 ml</span>
+        </div>
+      </div>
+      <!-- User Input Column -->
+      <form onsubmit="absAlcVolCalc(); return false" class="col">
+        <div class="form-group">
+          <label for="componentVol">Volume of Component (ml) </label>
+          <input class="form-control"type="number" name="" id="componentVol" required step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="componentABV">Component ABV% </label>
+          <input class="form-control" type="number" name="" id="componentABV" required step="0.01">
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Calculate</button>
+      </form>   
+    </div>
+
+    <!-- ABV % Calculator -->
+    <h2 class="text-center rowTitle">ABV% Calculator</h2>
+    <div class="row abvRow">
+      <!-- Results Column -->
+      <div class="col">
+        <div>
+          <p class="font-weight-bold">ABV%</p>
+          <span class="resultsText1" id="ABV">0.00 %</span>
+        </div>
+      </div>
+      <!-- User Input Column  -->
+      <form onsubmit="abvCalc(); return false;" class="col">
+        <div class="form-group">
+          <label for="componentAlcVol">Vol. of Absolute Alcohol (ml) </label>
+          <input class="form-control" type="number" name="" id="componentAlcVol" required step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="totalVol">Total Volume of Solution (ml) </label>
+          <input class="form-control" type="number" name="" id="totalVol" required step="0.01">
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Calculate</button>
+      </form>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
